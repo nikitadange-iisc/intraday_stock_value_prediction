@@ -1,0 +1,110 @@
+1. Price level & range (from summary table)
+Very high price stocks (premium names)
+SHREECEM (~20,700 avg close, max 32,400)
+BLUEDART (~5,300)
+DMART (~2,870)
+HDFCAMC (~2,690)
+PIDILITIND (~1,665)
+ICICIGI (~1,300)
+These are high-ticket names with large absolute moves, even if % returns are moderate.
+Low price, high range stocks
+NMDC (~25 avg, 6.4 → 91)
+GAIL (~99 avg, 39 → 232)
+ADANIPOWER (~171 avg, 15 → 877)
+IRCTC (~358 avg, 28 → 1,192)
+These have big % swings relative to their low starting price.
+Strong price appreciation over history
+Many names show large max vs min (strong long-term uptrends):
+ADANIGREEN (25 → 2,973)
+ATGL (76 → 3,912)
+DMART (615 → 5,398)
+LTTS (717 → 5,955)
+NAUKRI (140 → 1,817)
+PIDILITIND (526 → 3,360)
+This matches the high positive trend_corr you see later.
+2. Liquidity / volume
+Most liquid (very high avg volume)
+NMDC (~28.6M)
+GAIL (~9.3M)
+ADANIPOWER (~8.3M)
+BANDHANBNK (~5.7M)
+DLF (~5.6M)
+These are highly traded, better for systematic strategies needing capacity.
+Least liquid (thinly traded)
+BLUEDART (~12.8k)
+SHREECEM (~24k)
+LTTS (~129k)
+HDFCAMC (~316k)
+PIDILITIND (~345k)
+These are more “special situations” names – larger slippage risk and position size constraints, even though they may show strong trends.
+3. Volatility & tail risk (daily returns)
+3.1 Average daily volatility (avg_volatility)
+Highest volatility names
+IRCTC (0.0304)
+ADANIPOWER (0.0283)
+NMDC (0.0250)
+BANDHANBNK (0.0252)
+ADANIGREEN (0.0294)
+ATGL (0.0290)
+These have larger typical day-to-day % moves.
+Lower volatility names
+DABUR (0.0121)
+PIDILITIND (0.0128)
+MARICO (0.0130)
+BERGEPAINT (0.0151)
+GODREJCP (0.0155)
+These are more “defensive” / stable growth type stocks.
+3.2 Outlier / tail behaviour (outlier_ratio_log_return_1d)
+Very heavy tails in daily returns
+IRCTC (~43.7% of days marked as outliers) → extremely spiky, many large moves.
+ATGL (~21%), ADANIGREEN (~20%), ADANIPOWER (~19%), SHREECEM (~18.8%), NMDC (~18.6%)
+Even relatively stable blue-chip type names (DMART, HDFCAMC, BLUEDART) have ~18% of days as outliers.
+More “regular” behaviour (but still with tails)
+Bottom of the list (still ~15%): ICICIPRULI, SBICARD, BANDHANBNK, CHOLAFIN, JSWENERGY, GODREJCP.
+Even the lowest are >14% outliers, so the universe as a whole is quite fat‑tailed – a warning for risk modeling.
+Takeaway:
+IRCTC is by far the most “event‑driven” / tail‑heavy; ADANI group, NMDC, SHREECEM, DMART also show frequent large moves.
+
+4. Trend vs volatility (quadrant view)
+Using trend_corr (correlation between date and close) and avg_volatility:
+
+4.1 Strong uptrend + high volatility (momentum + risk)
+PIDILITIND – trend_corr ~ 0.97, vol ~0.0128
+MARICO (~0.95, vol 0.0130)
+NAUKRI (~0.92, vol 0.0200)
+LTTS (~0.91, vol 0.0186)
+DMART (~0.91, vol 0.0167)
+IRCTC (~0.91, vol 0.0304)
+CHOLAFIN (~0.90, vol 0.0213)
+SHREECEM (~0.90, vol 0.0158)
+These names have very strong positive trends historically; coupled with even moderate volatility, they are prime candidates for trend‑following style strategies, but risk control is important (especially IRCTC / NAUKRI).
+
+4.2 Strong uptrend + moderate volatility (high quality trend)
+DABUR (~0.89, vol 0.0121)
+BERGEPAINT (~0.87, vol 0.0151)
+GODREJCP (~0.90, vol 0.0155)
+ICICIGI (~0.83, vol 0.0159)
+These show strong uptrends with comparatively lower daily noise – more “steady compounders”.
+4.3 Low / negative trend
+BANDHANBNK – trend_corr ~ -0.88: strong downtrend over the sample.
+**SBICARD (~ -0.18): mild negative trend.**   These have either structurally eroded in price (Bandhan Bank) or at least underperformed over time, despite meaningful volatility and volume.
+5. Combined view / stock‑level conclusions
+High‑volatility, high‑liquidity “trading” names
+NMDC, GAIL, ADANIPOWER, BANDHANBNK, DLF
+Good for intraday/short‑term strategies, but also carry more gap/tail risk. NMDC and ADANIPOWER are particularly volatile.
+High‑trend “compounders” with moderate volatility
+PIDILITIND, MARICO, DABUR, BERGEPAINT, GODREJCP, DMART, NAUKRI, LTTS, ICICIPRULI, ICICIGI
+These look like classic long‑only trend / quality names: strong historical uptrends, manageable volatility.
+High‑trend but very illiquid
+BLUEDART, SHREECEM, LTTS, HDFCAMC
+Attractive trends but thin volumes – more suitable for smaller size or discretionary trading.
+Extreme tail‑risk / event‑driven names
+IRCTC stands out as simultaneously:
+High volatility
+Huge outlier ratio
+Strong positive trend
+A high‑reward but high‑risk name where position sizing and stop‑loss logic are critical.
+Structural laggards / mean‑reversion candidates
+BANDHANBNK (clear negative trend despite high vol and decent volume).
+SBICARD (slightly negative trend).
+These could be candidates for either short‑bias or “turnaround” hypotheses, depending on fundamentals.
