@@ -6,8 +6,6 @@
 - Vasanthkumar S (vasanthakum1@iisc.ac.in)
 - Raj Shekhar (rajshekhar1@iisc.ac.in)
 
-> **Note:** Replace the above with your actual team member names and roll numbers.
-
 ## Problem Statement
 
 Build a system to predict intraday stock price ranges and trading signals (e.g., BUY/SELL) for selected equities using historical market data. The goal is to produce:
