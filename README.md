@@ -72,24 +72,6 @@ Summarize, at a high level, the modeling and engineering pipeline. For example:
 
 > Replace or expand this section with the exact methods you used (model types, hyperparameters, training strategy, etc.).
 
-## Results Summary
-
-Provide a concise summary of your key findings and performance. For example:
-
-- **Price prediction performance:**
-  - Validation MAE (high): XX.XX
-  - Validation MAE (low): XX.XX
-  - RMSE or other metrics.
-
-- **Label performance (BUY/SELL):**
-  - Accuracy: XX%
-  - Precision/Recall/F1 for BUY class.
-
-- **Qualitative insights:**
-  - How well the model tracks market movements.
-  - Cases where predictions are particularly strong or weak.
-
-> Add tables, figures, or links to plots if you have them.
 
 ## Project Structure
 
